@@ -1,6 +1,7 @@
 /**
  * Main Application Logic
- * Translucent Navigation, Mobile Drawer, Hero Parallax, Portfolio Filters, Lightbox Modal & Services Interactions
+ * Translucent Navigation, Mobile Drawer, Hero Parallax, Portfolio Filters, Lightbox Modal,
+ * Testimonial Carousel & FAQ Accordion Interactions
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -98,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Trigger pulse on interactive elements hover
-  const interactiveElements = document.querySelectorAll('.hero-actions a, .btn-glass, .btn-primary-glass, .hero-controls, .service-card, .photographer-portrait-wrapper');
+  const interactiveElements = document.querySelectorAll('.hero-actions a, .btn-glass, .btn-primary-glass, .hero-controls, .service-card, .photographer-portrait-wrapper, .journal-card, .insta-card');
   interactiveElements.forEach(el => {
     el.addEventListener('mouseenter', () => {
       if (typeof window.triggerGlassPulse === 'function') {
@@ -222,5 +223,66 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.key === 'ArrowLeft') navigateLightbox(-1);
       if (e.key === 'ArrowRight') navigateLightbox(1);
     }
+  });
+
+  // ==========================================================================
+  // TESTIMONIALS CAROUSEL
+  // ==========================================================================
+  const testimonialCards = document.querySelectorAll('.testimonial-card-glass');
+  const testimonialDots = document.querySelectorAll('.testimonial-dot');
+  const testPrev = document.getElementById('test-prev');
+  const testNext = document.getElementById('test-next');
+  let currentTestIndex = 0;
+
+  function showTestimonial(index) {
+    if (!testimonialCards.length) return;
+    testimonialCards.forEach((card, i) => {
+      card.classList.toggle('active', i === index);
+    });
+    testimonialDots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+    currentTestIndex = index;
+
+    if (typeof window.triggerGlassPulse === 'function') {
+      window.triggerGlassPulse(0.6);
+    }
+  }
+
+  testPrev?.addEventListener('click', () => {
+    const newIdx = (currentTestIndex - 1 + testimonialCards.length) % testimonialCards.length;
+    showTestimonial(newIdx);
+  });
+
+  testNext?.addEventListener('click', () => {
+    const newIdx = (currentTestIndex + 1) % testimonialCards.length;
+    showTestimonial(newIdx);
+  });
+
+  testimonialDots.forEach((dot, idx) => {
+    dot.addEventListener('click', () => showTestimonial(idx));
+  });
+
+  // ==========================================================================
+  // FAQ ACCORDION INTERACTION
+  // ==========================================================================
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const btn = item.querySelector('.faq-question-btn');
+    btn?.addEventListener('click', () => {
+      const isOpen = item.classList.contains('is-open');
+
+      // Close all items
+      faqItems.forEach(i => i.classList.remove('is-open'));
+
+      // Toggle clicked item
+      if (!isOpen) {
+        item.classList.add('is-open');
+        if (typeof window.triggerGlassPulse === 'function') {
+          window.triggerGlassPulse(0.4);
+        }
+      }
+    });
   });
 });
