@@ -11,12 +11,6 @@
 </head>
 <body>
 
-  <!-- Custom Fluid Interactive Round Hover Cursor -->
-  <div class="cursor-dot" id="cursor-dot"></div>
-  <div class="cursor-ring" id="cursor-ring">
-    <span class="cursor-label" id="cursor-label">VIEW</span>
-  </div>
-
   <!-- WebGL Dynamic Interactive Background Canvas -->
   <canvas id="c"></canvas>
 
@@ -150,6 +144,332 @@
         </div>
       </div>
 
+    </section>
+
+    <!-- STUDIO INTRODUCTION SECTION -->
+    <section class="studio-intro-section" id="about">
+      <div class="intro-glass-card">
+        <div class="intro-main">
+          <div class="intro-tagline">
+            <span>WHO WE ARE</span>
+          </div>
+          <h2 class="intro-quote">
+            "We are a creative photography studio focused on capturing authentic moments, meaningful details, and timeless imagery."
+          </h2>
+          <p class="intro-description">
+            Founded on the philosophy that true art exists in the space between light and memory. We compose minimalist visual narratives for high fashion monographs, intimate wedding ceremonies, and fine art gallery exhibitions globally.
+          </p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">250+</span>
+            <span class="stat-label">Sessions</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">80+</span>
+            <span class="stat-label">Weddings</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED WORK / PORTFOLIO SECTION ⭐ -->
+    <section class="portfolio-section" id="portfolio">
+      <div class="portfolio-header">
+        <div class="section-badge">
+          <span>SELECTED WORKS</span>
+        </div>
+        <h2 class="section-title">Featured Portfolio</h2>
+        <p class="section-subtitle">A curated monographic collection across fine art, fashion, editorial, commercial, and wedding series.</p>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="portfolio-filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="weddings">Weddings</button>
+        <button class="filter-btn" data-filter="portraits">Portraits</button>
+        <button class="filter-btn" data-filter="fashion">Fashion</button>
+        <button class="filter-btn" data-filter="events">Events</button>
+        <button class="filter-btn" data-filter="commercial">Commercial</button>
+        <button class="filter-btn" data-filter="editorial">Editorial</button>
+      </div>
+
+      <!-- Masonry Grid Gallery -->
+      <div class="portfolio-grid" id="portfolio-grid">
+        
+        <!-- Wedding Item -->
+        <article class="portfolio-card" data-category="weddings" data-exif="Leica M11 • Summilux 35mm • f/1.4">
+          <img src="assets/images/wedding.jpg" alt="High Fashion Wedding Portrait" class="portfolio-card-img">
+          <div class="portfolio-card-overlay">
+            <span class="card-category">Weddings</span>
+            <h3 class="card-title">The Gothic Cathedral Vows</h3>
+            <span class="card-action">
+              Explore Frame
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- Portrait Item -->
+        <article class="portfolio-card" data-category="portraits" data-exif="Hasselblad H6D • 100mm • f/2.2">
+          <img src="assets/images/portrait.jpg" alt="Cinematic Studio Portrait" class="portfolio-card-img">
+          <div class="portfolio-card-overlay">
+            <span class="card-category">Portraits</span>
+            <h3 class="card-title">Shadows of Contemplation</h3>
+            <span class="card-action">
+              Explore Frame
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- Fashion Item -->
+        <article class="portfolio-card" data-category="fashion" data-exif="Canon R5 • 85mm f/1.2 L">
+          <img src="assets/images/fashion.jpg" alt="Vogue Editorial Fashion Shoot" class="portfolio-card-img">
+          <div class="portfolio-card-overlay">
+            <span class="card-category">Fashion</span>
+            <h3 class="card-title">Couture &amp; Concrete Monograph</h3>
+            <span class="card-action">
+              Explore Frame
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- Commercial Item -->
+        <article class="portfolio-card" data-category="commercial" data-exif="Phase One XF • 120mm Macro">
+          <img src="assets/images/hero2.jpg" alt="Luxury Architectural Commercial Project" class="portfolio-card-img">
+          <div class="portfolio-card-overlay">
+            <span class="card-category">Commercial</span>
+            <h3 class="card-title">Minimal Brutalist Gallery</h3>
+            <span class="card-action">
+              Explore Frame
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- Events Item -->
+        <article class="portfolio-card" data-category="events" data-exif="Sony A1 • 24-70mm f/2.8 GM">
+          <img src="assets/images/hero.jpg" alt="Luxury Gala Event Photography" class="portfolio-card-img">
+          <div class="portfolio-card-overlay">
+            <span class="card-category">Events</span>
+            <h3 class="card-title">Nocturne Biennale Gala</h3>
+            <span class="card-action">
+              Explore Frame
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- Editorial Item -->
+        <article class="portfolio-card" data-category="editorial" data-exif="Leica SL2 • Noctilux 50mm f/0.95">
+          <img src="assets/images/hero.jpg" alt="Fine Art Editorial Photography" class="portfolio-card-img">
+          <div class="portfolio-card-overlay">
+            <span class="card-category">Editorial</span>
+            <h3 class="card-title">Silence Between Light</h3>
+            <span class="card-action">
+              Explore Frame
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL VIEWER -->
+    <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close Lightbox">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous Photo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <button class="lightbox-next" id="lightbox-next" aria-label="Next Photo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+
+      <div class="lightbox-content">
+        <img src="" alt="" class="lightbox-img" id="lightbox-img">
+        <div class="lightbox-meta">
+          <h3 class="lightbox-title" id="lightbox-title"></h3>
+          <div class="lightbox-exif" id="lightbox-exif"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICES SECTION -->
+    <section class="services-section" id="services">
+      <div class="services-header">
+        <div class="section-badge">
+          <span>WHAT WE OFFER</span>
+        </div>
+        <h2 class="section-title">Studio Services</h2>
+        <p class="section-subtitle">Comprehensive creative photography, visual direction, and monographic print design tailored to your narrative.</p>
+      </div>
+
+      <div class="services-grid">
+        
+        <!-- Service 1: Wedding Photography -->
+        <div class="service-card">
+          <div class="service-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </div>
+          <h3 class="service-title">Wedding Photography</h3>
+          <ul class="service-list">
+            <li class="service-item">
+              <svg class="service-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Full-day coverage</span>
+            </li>
+            <li class="service-item">
+              <svg class="service-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Pre-wedding sessions</span>
+            </li>
+            <li class="service-item">
+              <svg class="service-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Candid photography</span>
+            </li>
+            <li class="service-item">
+              <svg class="service-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Fine art handcrafted albums</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service 2: Portrait Sessions -->
+        <div class="service-card">
+          <div class="service-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+          </div>
+          <h3 class="service-title">Portrait Sessions</h3>
+          <ul class="service-list">
+            <li class="service-item">
+              <svg class="service-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Individual portraits</span>
+            </li>
+            <li class="service-item">
+              <svg class="service-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Couple sessions</span>
+            </li>
+            <li class="service-item">
+              <svg class="service-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Professional portraits</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service 3: Commercial -->
+        <div class="service-card">
+          <div class="service-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <h3 class="service-title">Commercial</h3>
+          <ul class="service-list">
+            <li class="service-item">
+              <svg class="service-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Product photography</span>
+            </li>
+            <li class="service-item">
+              <svg class="service-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Brand campaigns</span>
+            </li>
+            <li class="service-item">
+              <svg class="service-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Corporate photography</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service 4: Events -->
+        <div class="service-card">
+          <div class="service-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3 class="service-title">Events</h3>
+          <ul class="service-list">
+            <li class="service-item">
+              <svg class="service-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Corporate events</span>
+            </li>
+            <li class="service-item">
+              <svg class="service-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Celebrations</span>
+            </li>
+            <li class="service-item">
+              <svg class="service-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Cultural events</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="services-action-bar">
+        <a href="#contact" class="btn-primary-glass">Explore Services &rarr;</a>
+      </div>
+    </section>
+
+    <!-- ABOUT PHOTOGRAPHER SECTION (BEHIND THE CAMERA) -->
+    <section class="about-photographer-section" id="photographer">
+      <div class="about-photographer-card">
+        
+        <!-- Portrait Column -->
+        <div class="photographer-portrait-wrapper">
+          <img src="assets/images/tyson.jpg" alt="Tyson - Lead Photographer" class="photographer-portrait-img">
+          <div class="photographer-badge-glass">
+            <div>
+              <div class="photographer-badge-name">Tyson</div>
+              <div class="photographer-badge-role">Lead Photographer</div>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="4"/></svg>
+          </div>
+        </div>
+
+        <!-- Bio Content Column -->
+        <div class="photographer-content-side">
+          <div class="intro-tagline" style="margin-bottom: 1.25rem;">
+            <span>BEHIND THE CAMERA</span>
+          </div>
+
+          <h2 class="about-quote-huge">
+            "I'm Tyson, a photographer and visual storyteller based in <span class="accent-highlight">Kochi</span>."
+          </h2>
+
+          <p class="photographer-bio-text">
+            My approach is simple — create photographs that feel natural today and meaningful years from now. I specialize in observing unscripted interactions, architectural light refractions, and authentic human emotion without forced posing.
+          </p>
+
+          <div class="photographer-meta-grid">
+            <div class="meta-info-box">
+              <div class="meta-info-label">Base Location</div>
+              <div class="meta-info-value">Kochi, Kerala • Worldwide</div>
+            </div>
+            <div class="meta-info-box">
+              <div class="meta-info-label">Experience</div>
+              <div class="meta-info-value">10+ Years Professional</div>
+            </div>
+            <div class="meta-info-box">
+              <div class="meta-info-label">Primary Camera</div>
+              <div class="meta-info-value">Leica M11 &amp; Hasselblad</div>
+            </div>
+            <div class="meta-info-box">
+              <div class="meta-info-label">Philosophy</div>
+              <div class="meta-info-value">Authentic &amp; Timeless</div>
+            </div>
+          </div>
+
+          <div>
+            <a href="#contact" class="btn-primary-glass">Meet the Photographer &rarr;</a>
+          </div>
+        </div>
+
+      </div>
     </section>
 
     <!-- Translucent Mobile Friendly Footer -->
