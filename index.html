@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>BETWEEN FRAMES | Fine Art & Editorial Photography Studio</title>
+  <meta name="description" content="Fine art, high fashion, and editorial photography studio. Capturing light, shadows, and moments between frames.">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- WebGL Dynamic Interactive Background Canvas -->
+  <canvas id="c"></canvas>
+
+  <!-- Application Content Frame -->
+  <div class="app-container">
+
+    <!-- Translucent Mobile Friendly Header -->
+    <header class="site-header" role="banner">
+      <div class="header-inner">
+        
+        <!-- Brand Logo -->
+        <a href="#" class="brand-logo" aria-label="Between Frames Home">
+          <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/>
+            <circle cx="12" cy="12" r="5" stroke-width="1.5"/>
+            <line x1="3" y1="9" x2="21" y2="9" stroke-width="1"/>
+          </svg>
+          <span>Between Frames</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav" aria-label="Primary Navigation">
+          <ul class="nav-list">
+            <li><a href="#portfolio" class="nav-link active">Galleries</a></li>
+            <li><a href="#exhibitions" class="nav-link">Exhibitions</a></li>
+            <li><a href="#editorial" class="nav-link">Editorial</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Header Actions & Mobile Toggle -->
+        <div class="header-actions">
+          <a href="#contact" class="btn-glass">Book Session</a>
+          
+          <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <div class="hamburger-box">
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </div>
+          </button>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- Translucent Mobile Navigation Drawer Overlay -->
+    <div class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation Overlay">
+      <ul class="mobile-nav-list">
+        <li><a href="#portfolio" class="mobile-nav-link active">Galleries</a></li>
+        <li><a href="#exhibitions" class="mobile-nav-link">Exhibitions</a></li>
+        <li><a href="#editorial" class="mobile-nav-link">Editorial</a></li>
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+      <div class="mobile-nav-footer">
+        <div class="mobile-socials">
+          <a href="#" class="mobile-social-link">Instagram</a>
+          <a href="#" class="mobile-social-link">Behance</a>
+          <a href="#" class="mobile-social-link">500px</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- HERO SECTION - FULL-SCREEN CINEMATIC SHOWCASE ⭐ -->
+    <section class="hero-section" id="hero">
+      
+      <!-- Full-Screen Photography Background Slides -->
+      <div class="hero-bg-wrapper">
+        <div class="hero-bg-slide active">
+          <img src="assets/images/hero.jpg" alt="Fine Art Editorial Photography - Architectural Shadow Silhouette" class="hero-bg-image">
+        </div>
+        <div class="hero-bg-slide">
+          <img src="assets/images/hero2.jpg" alt="High Fashion Portrait Photography" class="hero-bg-image">
+        </div>
+        <div class="hero-bg-overlay"></div>
+      </div>
+
+      <!-- Main Hero Container -->
+      <div class="hero-container">
+        
+        <!-- Subtitle Pill Tag -->
+        <div class="hero-tagline hero-animate hero-animate-delay-1">
+          <span class="status-dot"></span>
+          <span>Fine Art &amp; Editorial Studio</span>
+        </div>
+
+        <!-- Huge Editorial Typography -->
+        <h1 class="hero-title-huge hero-animate hero-animate-delay-2">
+          Silence <span class="accent-word">in</span><br>Motion
+        </h1>
+
+        <!-- Minimalist Description -->
+        <p class="hero-subtitle hero-animate hero-animate-delay-3">
+          Capturing the delicate interplay of light, shadow, and architectural elegance across world galleries and high fashion monographs.
+        </p>
+
+        <!-- Hero Actions -->
+        <div class="hero-actions hero-animate hero-animate-delay-4">
+          <a href="#portfolio" class="btn-primary-glass">Explore Galleries</a>
+          <a href="#about" class="btn-glass">View Monograph</a>
+        </div>
+
+      </div>
+
+      <!-- Interactive Scroll Indicator -->
+      <a href="#portfolio" class="hero-scroll-indicator" aria-label="Scroll to explore galleries">
+        <span class="scroll-text">Scroll to explore</span>
+        <div class="scroll-line-box">
+          <span class="scroll-dot"></span>
+        </div>
+      </a>
+
+      <!-- Interactive Photography Slide Controls -->
+      <div class="hero-controls">
+        <div class="slide-counter">
+          <span class="current" id="slide-current">01</span> / <span>02</span>
+        </div>
+        <div class="slide-btns">
+          <button class="slide-btn" id="slide-prev" aria-label="Previous Slide">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button class="slide-btn" id="slide-next" aria-label="Next Slide">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Translucent Mobile Friendly Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-top">
+        
+        <!-- Brand & Vision -->
+        <div class="footer-brand">
+          <span class="footer-logo">Between Frames</span>
+          <p class="footer-desc">
+            Independent photography studio producing limited monograph prints, editorial fashion series, and immersive gallery exhibitions worldwide.
+          </p>
+        </div>
+
+        <!-- Navigation Links -->
+        <div>
+          <h4 class="footer-heading">Portfolios</h4>
+          <ul class="footer-links">
+            <li><a href="#">Architecture &amp; Void</a></li>
+            <li><a href="#">High Fashion Editorial</a></li>
+            <li><a href="#">Monochrome Studies</a></li>
+            <li><a href="#">Cinematic Portraits</a></li>
+          </ul>
+        </div>
+
+        <!-- Information -->
+        <div>
+          <h4 class="footer-heading">Studio</h4>
+          <ul class="footer-links">
+            <li><a href="#">Monographs &amp; Prints</a></li>
+            <li><a href="#">Upcoming Exhibitions</a></li>
+            <li><a href="#">Press &amp; Awards</a></li>
+            <li><a href="#">Representation</a></li>
+          </ul>
+        </div>
+
+        <!-- Location & Contact -->
+        <div>
+          <h4 class="footer-heading">Locations</h4>
+          <div class="footer-location">
+            <p><strong>Tokyo:</strong> Ginza 6-Chome Studio</p>
+            <p><strong>New York:</strong> Tribeca Loft 4B</p>
+            <p style="margin-top: 0.5rem; color: var(--text-main);">inquiries@betweenframes.com</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 BETWEEN FRAMES STUDIO. All rights reserved.
+        </div>
+
+        <!-- Social Media Icon Buttons -->
+        <div class="footer-socials">
+          <a href="#" class="social-icon-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" class="social-icon-btn" aria-label="Behance">
+            <svg viewBox="0 0 24 24"><path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-4.813 3-3.123 0-5.413-2.146-5.413-5.491 0-3.479 2.378-5.509 5.297-5.509 3.256 0 5.039 2.311 4.754 5.759h-7.618c.081 1.378.966 2.372 2.502 2.372 1.106 0 1.848-.445 2.19-1.131h3.093zm-4.943-5.111c-1.309 0-2.029.839-2.179 1.954h4.316c-.053-1.077-.732-1.954-2.137-1.954zm-10.283 5.111h-3.5v-10h3.805c1.879 0 3.195.952 3.195 2.568 0 1.096-.613 1.868-1.579 2.222 1.229.313 1.979 1.246 1.979 2.542 0 1.758-1.373 2.668-3.9 2.668zm-3.5-6h3.2c.9 0 1.5-.4 1.5-1.1 0-.7-.6-1.1-1.5-1.1h-3.2v2.2zm0 4.2h3.4c1 0 1.6-.5 1.6-1.2 0-.8-.6-1.3-1.6-1.3h-3.4v2.5z"/></svg>
+          </a>
+          <a href="#" class="social-icon-btn" aria-label="500px">
+            <svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2.5 17.5c-2.485 0-4.5-2.015-4.5-4.5s2.015-4.5 4.5-4.5 4.5 2.015 4.5 4.5-2.015 4.5-4.5 4.5zm7 0c-2.485 0-4.5-2.015-4.5-4.5s2.015-4.5 4.5-4.5 4.5 2.015 4.5 4.5-2.015 4.5-4.5 4.5z"/></svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="js/fluted-glass.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
