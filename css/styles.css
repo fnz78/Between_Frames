@@ -64,6 +64,165 @@ body.nav-open {
   overflow: hidden;
 }
 
+/* ==========================================================================
+   FLUID ROUND HOVER CURSOR & CIRCULAR ANIMATION DESIGN SYSTEM ⭐
+   ========================================================================== */
+
+/* Hide default cursor on desktop for custom interactive round follower */
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
+  a, button, input, [role="button"], .hero-bg-wrapper {
+    cursor: none !important;
+  }
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 42px;
+  height: 42px;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              height 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              background-color 0.35s ease, 
+              border-color 0.35s ease,
+              box-shadow 0.35s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cursor-ring .cursor-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 600;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Hover States for Custom Round Cursor */
+body.is-hovering .cursor-dot {
+  transform: translate(-50%, -50%) scale(0.4);
+  background-color: var(--accent-gold);
+}
+
+body.is-hovering .cursor-ring {
+  width: 68px;
+  height: 68px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+}
+
+body.is-hovering-image .cursor-ring {
+  width: 96px;
+  height: 96px;
+  background-color: rgba(14, 14, 20, 0.55);
+  border-color: rgba(212, 175, 55, 0.6);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 35px rgba(212, 175, 55, 0.3);
+}
+
+body.is-hovering-image .cursor-ring .cursor-label {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* --- Round Animated Hover Fill for Glass Buttons --- */
+.btn-glass, .btn-primary-glass, .social-icon-btn, .slide-btn, .nav-toggle {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.35s ease;
+}
+
+.btn-glass::before, .btn-primary-glass::before, .social-icon-btn::before, .slide-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160%;
+  height: 0;
+  padding-bottom: 160%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 70%);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0;
+}
+
+.btn-glass:hover::before, .btn-primary-glass:hover::before, .social-icon-btn:hover::before, .slide-btn:hover::before {
+  transform: translate(-50%, -50%) scale(1.1);
+  opacity: 1;
+}
+
+.btn-glass:hover, .btn-primary-glass:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 35px rgba(255, 255, 255, 0.25), 0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+.social-icon-btn:hover, .slide-btn:hover {
+  transform: translateY(-3px) scale(1.15) rotate(5deg);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.35);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Round Liquid Hover Halo for Navigation Links */
+.nav-link {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-full);
+  padding: 0.5rem 1.1rem;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-full);
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.14) 0%, transparent 80%);
+  transform: scale(0.3);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.nav-link:hover::before, .nav-link.active::before {
+  transform: scale(1);
+  opacity: 1;
+}
+
 /* --- WebGL Canvas Layer --- */
 #c {
   position: fixed;

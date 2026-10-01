@@ -1,6 +1,6 @@
 /**
  * Main Application Logic
- * Translucent Navigation, Mobile Drawer, Hero Parallax & Synchronized WebGL Shader Interactions
+ * Translucent Navigation, Mobile Drawer, Hero Parallax, WebGL Sync & Custom Round Hover Cursor
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -39,6 +39,65 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.remove('nav-open');
       }
     });
+  }
+
+  // --- CUSTOM FLUID ROUND HOVER CURSOR SYSTEM ⭐ ---
+  const cursorDot = document.getElementById('cursor-dot');
+  const cursorRing = document.getElementById('cursor-ring');
+  const cursorLabel = document.getElementById('cursor-label');
+
+  if (cursorDot && cursorRing && window.matchMedia('(pointer: fine)').matches) {
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let ringX = mouseX;
+    let ringY = mouseY;
+    let dotX = mouseX;
+    let dotY = mouseY;
+
+    window.addEventListener('pointermove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    }, { passive: true });
+
+    // Smooth Lerp Physics Loop
+    function renderCursor() {
+      // Fast lerp for dot
+      dotX += (mouseX - dotX) * 0.45;
+      dotY += (mouseY - dotY) * 0.45;
+
+      // Smooth fluid lerp for ring follower
+      ringX += (mouseX - ringX) * 0.15;
+      ringY += (mouseY - ringY) * 0.15;
+
+      cursorDot.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
+      cursorRing.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
+
+      requestAnimationFrame(renderCursor);
+    }
+    requestAnimationFrame(renderCursor);
+
+    // Interactive Hover Listeners for UI Links & Buttons
+    const hoverTargets = document.querySelectorAll('a, button, input, .btn-glass, .btn-primary-glass, .nav-link, .social-icon-btn, .slide-btn');
+    hoverTargets.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        document.body.classList.add('is-hovering');
+      });
+      el.addEventListener('mouseleave', () => {
+        document.body.classList.remove('is-hovering');
+      });
+    });
+
+    // Image Lens Hover Listener for Hero Photography Wrapper
+    const heroBgWrapper = document.querySelector('.hero-bg-wrapper');
+    if (heroBgWrapper) {
+      heroBgWrapper.addEventListener('mouseenter', () => {
+        document.body.classList.add('is-hovering-image');
+        if (cursorLabel) cursorLabel.textContent = 'EXPLORE';
+      });
+      heroBgWrapper.addEventListener('mouseleave', () => {
+        document.body.classList.remove('is-hovering-image');
+      });
+    }
   }
 
   // Header Scroll Blur & Shadow adjustment + Hero Background Parallax
